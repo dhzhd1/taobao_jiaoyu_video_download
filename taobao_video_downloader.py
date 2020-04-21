@@ -93,8 +93,15 @@ for cpt in chapters:
         """
 
         # MP4 directly method
-        async_jsonp31_req = [req for req in driver.requests if "callback=jsonp31" in req.path]
-        async_jsonp31_response = async_jsonp31_req[0].response.body
+        while True:
+            try:
+                async_jsonp31_req = [req for req in driver.requests if "callback=jsonp31" in req.path]
+                async_jsonp31_response = async_jsonp31_req[0].response.body
+                break
+            expcept Exception as e:
+                time.sleep(5)
+                print("Keeping waiting async_jsonp31 data...")
+                
         re_auth_key = r'authKey\":\"[^\"]+'
         re_mp4_hd = r'(https://cloud.video.taobao.com/play/./[0-9]+/./././7/./././hd/[0-9]+.mp4)'
         re_mp4_ud = r'(https://cloud.video.taobao.com/play/./[0-9]+/./././7/./././ud/[0-9]+.mp4)'
