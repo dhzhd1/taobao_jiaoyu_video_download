@@ -1,1 +1,4 @@
-# taobao_jiaoyu_video_download
+# 淘宝教育在线视频下载脚本
+
+本脚本只针对已经购买的视频。
+脚本语言： Python 3.x
