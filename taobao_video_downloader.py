@@ -13,6 +13,7 @@ URL_COURSE = ''
 URL_DRAWING = 'https://v.daxue.taobao.com/detail.htm?courseId=81586'
 URL_PREFIX = 'http://v.xue.taobao.com/'
 VIDEO_DL_FOLDER = './Videos/'
+CHAPTER_NUM = '100'
 
 # if not DEBUG:
 #     option = Options()
@@ -42,7 +43,7 @@ outlines = bs.find(id='J_CourseListContent')
 # chapters = [{'chapter_name': 'chaptername', 'courses': [{'course_name': 'name', 'course_url': 'url-addr'}]}, {}, ...]
 print("Get chapter information...")
 chapters = []
-for idx in range(69, 78):
+for idx in range(0, CHAPTER_NUM):
     chapter_info = {}
     temp = outlines.find(attrs={'data-id': str(idx)})
     chapter_info['chapter_name'] = '_'.join(temp.find('span', 'chapter-num').text.replace('\n', '').strip().split())
