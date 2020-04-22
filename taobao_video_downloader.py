@@ -99,7 +99,8 @@ for cpt in chapters:
                 async_jsonp31_response = async_jsonp31_req[0].response.body
                 break
             expcept Exception as e:
-                time.sleep(5)
+                driver.get(course_url)
+                time.sleep(10)
                 print("Keeping waiting async_jsonp31 data...")
                 
         re_auth_key = r'authKey\":\"[^\"]+'
