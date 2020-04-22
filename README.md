@@ -4,3 +4,5 @@
 脚本语言： Python 3.x
 
 运行脚本请修改文件内的变量 URL_COURSE 变成想要下载的课程的链接即可。 eg： ‘https://v.daxue.taobao.com/detail.htm?&courseId=119819’
+
+修改 CHAPTER_NUM， 设定为课程中最大的章节数
